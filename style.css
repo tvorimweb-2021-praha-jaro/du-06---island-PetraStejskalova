@@ -12,6 +12,13 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: var(--primary);
+    font-weight: 400;
+}
+.obal {
+    width: auto;
+    margin: 0;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 header {
     font-size: 0.9rem;
@@ -19,7 +26,7 @@ header {
     background-color: var(--grafika);
     background-image: linear-gradient(hsla(0 0% 0% /0.3),hsla(0 0% 0% /0.3)), url(images/island-hlavicka.jpg);
     text-align: center;
-    background-position: left top;
+    background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 1rem 2.3rem;
@@ -46,7 +53,7 @@ h1 {
     margin-left: -40px;
     left: 50%;
     top: 0;
-    background-color: var(--primary);
+    background-color: #f5f5f5af;
 }
 .menu a {
     text-decoration: none;
@@ -75,14 +82,18 @@ section img {
     height: auto;
     padding-top: 2.4rem;
 }
-section .copyright {
-    padding-bottom: 2rem;
+.obal-obrazku-sekce {
+    margin-bottom: 3rem;
 }
+/* section .copyright {
+    padding-bottom: 2rem;
+} */
 .copyright {
     margin: 0;
     text-align: center;
     font-size: 0.7rem;
     color: var(--popisky);
+    font-family: Raleway, sans-serif;
 }
 .copyright a {
     color: var(--popisky);
@@ -92,21 +103,23 @@ h2 {
     padding-left: 1.6rem;
     font-size: 1.6rem;
     margin-bottom: 3.8rem;
-}
-section {
+    margin-top: 3rem;
     position: relative;
 }
 h2::after {
     position: absolute;
     content: "";
     height: 4px;
-    width: 105px;
+    width: 100px;
     background-color: var(--grafika);
     left: -1.6rem;
     top: 4rem;
 }
 .fotogalerie {
     margin-top: 6rem;
+}
+.foto {
+    margin: 0;
 }
 .fotogalerie img {
     width: 100%;
@@ -130,7 +143,6 @@ h2::after {
 footer {
     background: rgb(216, 216, 216);
     background: linear-gradient(180deg, rgba(207,207,207,1) 0%, rgba(231,231,231,1) 15%);
-    text-align: center;
     font-size: 0.7rem;
     color: var(--popisky);
     text-align: left;
@@ -138,4 +150,165 @@ footer {
 }
 footer a {
     color: var(--popisky);
+}
+@media screen and (min-width: 520px) {
+    header {
+        font-size: 1rem;
+        padding: 1rem 2.3rem;
+    }
+    h1 {
+        font-size: 4.3rem;
+    }
+    .autor::before {
+        width: 70px;
+    }
+    .menu {
+        display: flex;
+        font-size: 0.75rem;
+    }
+    .menu li{
+        min-width: 25%;
+        border-left: 1px solid #e6e6e6;
+        border-top: 1px solid #e6e6e6;
+    }
+    .menu li:first-child {
+        border-left: none;
+    }
+    section p {
+        font-size: 1rem;
+    }
+    .copyright {
+        color: var(--primary);
+        padding: 0;
+        font-size: 0.8rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+    }
+    .copyright a {
+        color: var(--primary);
+    }
+    h2 {
+        font-size: 1.9rem;
+    }
+    .obal-obrazku-sekce {
+        position: relative;
+    }
+    .fotogalerie-obal-fotek {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .foto {
+        width: 50%;
+        position: relative;
+    }
+    .foto img {
+        height: 100%;
+        width: auto;
+    }
+    footer {
+        font-size: 0.6rem;
+    }
+    .popisek {
+        position: absolute;
+        display: block;
+        color: var(--primary);
+        background-color: rgba(0, 0, 0, 0.522);
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        padding: 0.9rem;
+        /* transition: opacity 2s ease; */
+        animation: popis-ve-fotu 2s linear infinite;
+    }
+    .popisek a {
+        color: var(--primary);
+    }
+    /* @keyframes popis-ve-fotu {
+        from {
+            
+        }
+        to{
+            
+        }
+    } */
+}
+@media screen and (min-width: 1000px) {
+    .obal {
+        position: relative;
+        top: -4.5rem;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    header {
+        font-size: 1rem;
+        padding: 5rem 18rem;
+    }
+    h1 {
+        font-size: 6rem;
+    }
+    header p {
+        margin-top: 0;
+    }
+    .menu {
+        display: block;
+    }
+    .menu li{
+        min-width: 25%;
+        border-left: none;
+        border-top: none;
+    }
+    h2 {
+        font-size: 2.3rem;
+        padding-left: 3rem;
+    }
+    section p {
+        padding: 0 3.5rem 0 3rem;
+    }
+    h2::after {
+        left: 0rem;
+        top: 5.1rem;
+    }
+    .uvod,
+    .co-videt {
+        margin: 0 0 0 13rem;
+    }
+    .uvod .obal-obrazku-sekce,
+    .co-videt .obal-obrazku-sekce {
+        margin: 0 0 0 -13rem;            
+    }
+    .co-videt p:nth-child(8) {
+        padding-top: 2.4rem;
+    }
+    .proc-jet {
+        margin-right: 13rem;
+    }
+    .proc-jet .obal-obrazku-sekce {
+        margin: 0 -13rem 0 0;            
+    }
+    .copyright {
+        bottom: 1.5rem;
+    }
+    .foto {
+        width: calc(1/3 * 100%);
+    }
+    footer {
+        background: var(--primary);
+        font-size: 0.85rem;
+        padding: 0;
+        max-width: 960px;
+        margin:  0 auto;
+        position: relative;
+        top: -2.5rem;
+    }
+    .menu {
+        position: absolute;
+        text-align: left;
+        width: 230px;
+        padding-left: 3rem;
+        padding-top: 3rem;
+    }
+    .uvod {
+        padding-top: 2rem;
+    }
 }
